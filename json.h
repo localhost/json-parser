@@ -189,6 +189,11 @@ typedef struct _json_value
             return json_value_none;
          }
 
+         inline const struct _json_value &operator [] (const std::string& index) const
+         {
+            return this->operator[](index.c_str());
+         }
+
          inline operator const char * () const
          {  
             switch (type)
